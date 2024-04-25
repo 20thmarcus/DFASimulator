@@ -4,7 +4,7 @@ export const Badge = {
   },
   sizes: {
     node: {
-      bg: "gray.700",
+      bg: "green.700",
       color: ["gray.200", null, "gray.200"],
 
       // h: ["2em", "2em", "3.5em", "3.5em"],
@@ -12,7 +12,6 @@ export const Badge = {
       w: "3.5em",
       // w: ["2em", "2em", "3.5em", "3.5em"],
 
-      boxShadow: "xl",
       border: "2px",
       rounded: "50%",
 
@@ -33,39 +32,39 @@ export const Badge = {
   variants: {
     q1: {
       top: "50%",
-      left: "10%",
+      left: "9%",
 
-      borderColor: "blue.300",
+      borderColor: "gray.300",
     },
     q2: {
       top: "20%",
-      left: "20%",
+      left: "25%",
 
-      borderColor: "orange.300",
+      borderColor: "gray.300",
     },
     q3: {
-      top: "20%",
-      left: "40%",
+      top: "80%",
+      left: "25%",
 
-      borderColor: "purple.300",
+      borderColor: "gray.300",
     },
     q4: {
-      top: "80%",
-      left: "20%",
+      top: "50%",
+      left: "41%",
 
-      borderColor: "orange.300",
+      borderColor: "gray.300",
     },
     q5: {
-      top: "80%",
-      left: "40%",
+      top: "50%",
+      left: "61%",
 
-      borderColor: "purple.300",
+      borderColor: "gray.300",
     },
     q6: {
       top: "50%",
-      left: "50%",
+      left: "81%",
 
-      borderColor: "orange.300",
+      borderColor: "gray.300",
     },
     q7: {
       top: "20%",
@@ -93,9 +92,10 @@ export const Badge = {
     },
     T: {
       top: "50%",
-      left: "30%",
+      left: "25%",
 
-      borderColor: "pink.300",
+      borderColor: "white.300",
+      bg: "red.600"
     },
     1: {
       top: "15%",

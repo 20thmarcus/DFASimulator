@@ -28,18 +28,19 @@ const LeftBox = ({
 }) => {
   return (
     <>
+      {/*possibly for the box testing and simulate */}
       <Box
         w={["20em", "20em", "40em", "40em", "40em", "30em"]}
         mr={[0, 0, 0, 0, 0, 24]}
         mt={[14, 14, 16, 16, 16, 0]}
+        
       >
         <Flex align="flex-end" justify="space-between">
-          <Heading variant="title">DFA Simulator</Heading>
-          <Code fontSize={["0.5em", null, "0.6em", null, null, "0.6em"]}>
-            BETA
+          <Heading variant="title" style={{ fontFamily: 'Verdana, Geneva, sans-serif' }}>DFA Simulator</Heading>
+          <Code fontSize={["0.5em", null, "0.6em", null, null, "0.6em"]} style={{ fontFamily: 'Verdana, Geneva, sans-serif' }}>
+            {/* Your code content here */}
           </Code>
         </Flex>
-
         <Divider mb="6" />
 
         <Box>
@@ -70,17 +71,18 @@ const LeftBox = ({
               </Flex>
             </Flex>
             <Input
-              maxLength="500"
+              maxLength="100"
               fontSize={["0.7em", "0.7em", "0.9em"]}
               my={3}
-              placeholder={!prob2 ? "e.g. babbabab" : "e.g. 0110101"}
+              placeholder={!prob2 ? "e.g. bababb" : "e.g. 0110101"}
               value={string}
               onChange={handleTextChange}
+              color="gray.300"
             />
             <Flex justify="space-between" align="center">
               <Flex>
                 <Button type="submit" disabled={simulating}>
-                  Validate
+                  Testing
                 </Button>
                 <Button
                   isLoading={simulating}
@@ -99,12 +101,13 @@ const LeftBox = ({
                 >
                   Clear
                 </Button>
+                
               </Flex>
               <Text
                 fontWeight="semibold"
                 fontSize={["0.7em", "0.7em", "0.9em"]}
               >
-                Limit: {count}/500
+                Limit: {count}/100
               </Text>
             </Flex>
             <Divider my="6" />
@@ -134,7 +137,9 @@ const LeftBox = ({
           </form>
         </Box>
       </Box>
+      
     </>
+    
   );
 };
 

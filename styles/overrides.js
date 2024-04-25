@@ -18,16 +18,17 @@ export const Button = {
       ml: "3",
       mr: "1",
       fontWeight: "bold",
-      color: "gray.700",
+      color: "gray.100",
       textTransform: "uppercase",
 
       fontSize: ["0.7em", "0.7em", "0.9em"],
-      bg: "gray.100",
+      bg: "gray.700",
     },
     clear: {
       bg: "none",
       _hover: "",
       fontSize: ["0.7em", "0.7em", "0.9em"],
+      color:"gray.100",
     },
   },
   defaultProps: {
@@ -38,10 +39,12 @@ export const Button = {
 export const Input = {
   baseStyle: {
     _focus: "",
+    
   },
   sizes: {},
   variants: {},
   defaultProps: {},
+  
 };
 
 export const Heading = {

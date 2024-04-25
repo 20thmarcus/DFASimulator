@@ -22,12 +22,12 @@ const CFG = ({ prob2 }) => {
         <PopoverContent
           maxW={["17em", null, "16em", null, null, "16em"]}
           _focus=""
-          bg="gray.50"
+          bg="green.900"
           fontSize={["0.7em", "0.7em", "0.9em"]}
         >
           <PopoverArrow />
           <PopoverCloseButton />
-          <PopoverHeader fontWeight="semibold">
+          <PopoverHeader fontWeight="semibold" color="gray.100">
             Context-free Grammar
           </PopoverHeader>
           <PopoverBody align="center">

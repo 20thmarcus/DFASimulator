@@ -14,6 +14,7 @@ export const ArrowHead = ({ top, left, rotate }) => {
         translateX="-50%"
         translateY="-50%"
         transform="auto"
+        color="gray.300"
       >
         <MdKeyboardArrowRight size="1.2em" />
       </Box>
@@ -32,7 +33,7 @@ export const ArrowLoopSm = ({ top, left, rotate }) => {
         translateX="-50%"
         translateY="-50%"
         transform="auto"
-        color="gray.700"
+        color="gray.300"
         display={["flex", "flex", "flex", "flex", "flex", "none"]}
       >
         <RiArrowGoForwardLine size="1.3em" />
@@ -52,7 +53,7 @@ export const ArrowLoopLg = ({ top, left, rotate }) => {
         translateX="-50%"
         translateY="-50%"
         transform="auto"
-        color="gray.700"
+        color="gray.300"
         display={["none", null, "none", null, null, "flex"]}
       >
         <BsArrowClockwise size="2.2em" />
@@ -75,7 +76,7 @@ export const ArrowBody = ({ w, top, left, rotate }) => {
         translateY="-50%"
         transform="auto"
         borderTop="solid 2px"
-        borderTopColor="gray.700"
+        borderTopColor="gray.300"
       />
     </>
   );

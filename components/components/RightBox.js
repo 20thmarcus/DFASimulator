@@ -24,8 +24,8 @@ const RightBox = ({
         <Flex
           h={["12em", null, "18em", null, null, "18em"]}
           pos="relative"
-          borderBottom="solid 1px"
-          borderColor="gray.200"
+          borderBottom="solid 4px"
+          borderColor="gray.100"
         >
           {!prob2 ? (
             <FirstDFA currentNode={currentNode} simulating={simulating} />
