@@ -24,8 +24,8 @@ const RightBox = ({
         <Flex
           h={["12em", null, "18em", null, null, "18em"]}
           pos="relative"
-          borderBottom="solid 4px"
-          borderColor="gray.100"
+          borderBottom="solid 1px"
+          borderColor="gray.500"
         >
           {!prob2 ? (
             <FirstDFA currentNode={currentNode} simulating={simulating} />
@@ -42,9 +42,14 @@ const RightBox = ({
           direction="row"
           justify={["flex-end", null, "flex-end", null, null, "space-between"]}
         >
+          
           <Heading display={["none", null, "none", null, null, "flex"]}>
             Regular Expression: <Tag as="span">{!prob2 ? regex1 : regex2}</Tag>
           </Heading>
+          <Heading>Language Accepted:</Heading>
+              <Tag my={1} fontSize={["0.7em", "0.7em", "1em"]}>
+                {!prob2 ? "[a, b]" : "[0, 1]"}
+              </Tag>
           <Flex>
             <CFG prob2={prob2} />
             <Button

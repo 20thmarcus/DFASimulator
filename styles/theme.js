@@ -6,10 +6,10 @@ export const theme = extendTheme({
   styles: {
     global: (props) => ({
       body: {
-        bg: props.colorMode === "dark" ? "gray.800" : "gray.900",
+        bg: props.colorMode === "dark" ? "gray.800" : "#1F1F1F",
       },
       p: {
-        color: "gray.400",
+        color: "gray.200",
       },
       "h1": {
         color: "gray.300",

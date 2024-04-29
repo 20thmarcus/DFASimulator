@@ -20,9 +20,9 @@ const CFG = ({ prob2 }) => {
           <Button mx="2">Show CFG</Button>
         </PopoverTrigger>
         <PopoverContent
-          maxW={["17em", null, "16em", null, null, "16em"]}
+          maxW={["17em", null, "16em", null, null, "14em"]}
           _focus=""
-          bg="green.900"
+          bg="#151515"
           fontSize={["0.7em", "0.7em", "0.9em"]}
         >
           <PopoverArrow />
@@ -33,16 +33,16 @@ const CFG = ({ prob2 }) => {
           <PopoverBody align="center">
             {!prob2 ? (
               <VStack>
-                <Text>{"S -> abaX | babX"}</Text>
-                <Text>{"X -> aX | bX | babY"}</Text>
-                <Text>{"Y -> aZ | bZ"}</Text>
-                <Text>{"Z -> aZ | bZ | aaZ | ^"}</Text>
+                <Text>{"S -> XYZ"}</Text>
+                <Text>{"X -> aa | bb"}</Text>
+                <Text>{"Y -> X | ab | ba"}</Text>
+                <Text>{"Z -> aZ | bZ | ^"}</Text>
               </VStack>
             ) : (
               <VStack>
-                <Text>{"S -> 1X | 0X"}</Text>
-                <Text>{"X -> 1X | 0X | 111Y | 000Y | 101Y"}</Text>
-                <Text>{"Y -> 1Y | 0X | ^"}</Text>
+                <Text>{"S -> XYX"}</Text>
+                <Text>{"X -> 0X | 1X | ^"}</Text>
+                <Text>{"Y -> 000 | 101 | 111"}</Text>
               </VStack>
             )}
           </PopoverBody>

@@ -6,7 +6,7 @@ import LeftBox from "./components/LeftBox";
 import RightBox from "./components/RightBox";
 
 const Main = () => {
-  const regex1 = "(aa + bb) (a + b)* (a + b + ab + ba) (a + b + ab + ba)* (aa + bab)* (a + b + aa) (a + b + bb + aa)*";
+  const regex1 = "(aa+bb) (a+b)* (a+b+ab+ba) (a+b+ab+ba)* (aa+bab)* (a+b+aa) (a+b+bb+aa)*";
   const regex2 = "((101) + (111)* + (100) + (1 + 0 + 11)*)(1 + 0 + 01)* (111 + 000 + 101) (1 + 0)*";
 
   const [string, setString] = useState("");
@@ -71,7 +71,7 @@ const Main = () => {
   const notInLanguageToast = () => {
     notInLanguageString({
       title: "Empty/Invalid Input",
-      status: "warning",
+      status: "info",
       isClosable: true,
     });
   };
@@ -193,6 +193,7 @@ const Main = () => {
   };
 
   return (
+    /* This will show how the ui is being presented. */
     <Flex
       direction={["column", "column", "column", "column", "column", "row"]}
       align="center"

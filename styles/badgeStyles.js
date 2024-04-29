@@ -95,56 +95,57 @@ export const Badge = {
       left: "25%",
 
       borderColor: "white.300",
-      bg: "red.600"
+      bg: "red.900"
     },
-    1: {
-      top: "15%",
-      left: "70%",
-
-      borderColor: "orange.300",
-    },
-    2: {
-      top: "50%",
-      left: "70%",
-
-      borderColor: "purple.300",
-    },
-    3: {
-      top: "85%",
-      left: "70%",
-
-      borderColor: "orange.300",
-    },
-    4: {
-      top: "50%",
-      left: "50%",
-
-      borderColor: "orange.300",
-    },
-    5: {
-      top: "50%",
-      left: "90%",
-
-      borderColor: "teal.300",
-    },
-    6: {
-      top: "85%",
-      left: "50%",
-
-      borderColor: "purple.300",
-    },
-    7: {
-      top: "50%",
-      left: "30%",
-
-      borderColor: "purple.300",
-    },
-    8: {
-      top: "50%",
-      left: "10%",
-
-      borderColor: "blue.300",
-    },
+       /*q5 */
+       1: {
+        top: "80%",
+        left: "50%",
+      
+        borderColor: "orange.300",
+      },
+      /* q7*/
+      2: {
+        top: "50%",
+        left: "70%",
+      
+        borderColor: "purple.300",
+      },
+      /* q6*/
+      3: {
+        top: "50%",
+        left: "50%",
+      
+        borderColor: "orange.300",
+      },
+      /*q3*/
+      4: {
+        top: "15%",
+        left: "50%",
+    
+        borderColor: "orange.300",
+      },
+      /* q4*/
+      6: {
+        top: "80%",
+        left: "25%",
+      
+        borderColor: "purple.300",
+      },
+      /* q2*/
+      7: {
+        top: "15%",
+        left: "25%",
+      
+        borderColor: "purple.300",
+      },
+      /*q1 */
+      8: {
+        top: "50%",
+        left: "10%",
+      
+        borderColor: "blue.300",
+      },
   },
   defaultProps: {
     size: "node",

@@ -5,10 +5,11 @@ export const Button = {
   sizes: {
     regular: {
       fontSize: ["0.7em", "0.7em", "0.9em"],
-      px: "4",
-      py: "2",
+      px: "5",
+      py: "3",
     },
   },
+  //For the Valid check
   variants: {
     data: {
       _hover: "",
@@ -18,11 +19,11 @@ export const Button = {
       ml: "3",
       mr: "1",
       fontWeight: "bold",
-      color: "gray.100",
+      color: "pink.400",
       textTransform: "uppercase",
 
       fontSize: ["0.7em", "0.7em", "0.9em"],
-      bg: "gray.700",
+      bg: "gray.900",
     },
     clear: {
       bg: "none",
@@ -57,7 +58,9 @@ export const Heading = {
       fontSize: ["0.8em", "0.8em", "1.2em", "1.2em"],
     },
     title: {
-      fontSize: ["2em", "2.4em", "2.9em", "2.9em", "2.9em", "3.5em"],
+      fontSize: ["2em", "2.4em", "2.9em", "2.9em", "2.9em", "2.5em"],
+      fontWeight: "bold",
+      
     },
   },
   defaultProps: {
@@ -107,6 +110,7 @@ export const Text = {
 
       fontWeight: "semibold",
       fontSize: ["0.6em", "0.6em", "1em", "1em", "1em", "1em"],
+      
     },
   },
   variants: {},

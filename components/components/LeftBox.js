@@ -30,19 +30,26 @@ const LeftBox = ({
     <>
       {/*possibly for the box testing and simulate */}
       <Box
-        w={["20em", "20em", "40em", "40em", "40em", "30em"]}
+        w={["20em", "20em", "40em", "40em", "40em", "31em"]}
         mr={[0, 0, 0, 0, 0, 24]}
         mt={[14, 14, 16, 16, 16, 0]}
-        
-      >
+        mb={[16, 16, 20, 20, 20, 20]}
+        borderRadius="4%"
+        bg="#151515"
+        p="20"
+        boxShadow="0 0px 4px rgba(0, 0, 0, 0.1)"
+        border="1px solid #404040" // Add this line for the gray border
+        height="100%"
+>
+
+
         <Flex align="flex-end" justify="space-between">
-          <Heading variant="title" style={{ fontFamily: 'Verdana, Geneva, sans-serif' }}>DFA Simulator</Heading>
+          <Heading variant="title">DFA Compiler</Heading>
           <Code fontSize={["0.5em", null, "0.6em", null, null, "0.6em"]} style={{ fontFamily: 'Verdana, Geneva, sans-serif' }}>
             {/* Your code content here */}
           </Code>
         </Flex>
         <Divider mb="6" />
-
         <Box>
           <form onSubmit={handleTest}>
             <Flex align="center">
@@ -69,6 +76,7 @@ const LeftBox = ({
                   </Button>
                 )}
               </Flex>
+            
             </Flex>
             <Input
               maxLength="100"
@@ -81,7 +89,7 @@ const LeftBox = ({
             />
             <Flex justify="space-between" align="center">
               <Flex>
-                <Button type="submit" disabled={simulating}>
+                <Button type="submit" disabled={simulating} _hover={{ bg: "green.700" }}>
                   Testing
                 </Button>
                 <Button
@@ -91,6 +99,7 @@ const LeftBox = ({
                   onClick={handleSimulation}
                   ml={2}
                   disabled={simulating}
+                  _hover={{ bg: "blue.700" }}
                 >
                   Simulate
                 </Button>
@@ -110,6 +119,7 @@ const LeftBox = ({
                 Limit: {count}/100
               </Text>
             </Flex>
+            
             <Divider my="6" />
             {/* DIVIDER OF LEFT CONTAINER */}
             <Flex
