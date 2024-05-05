@@ -1,7 +1,5 @@
 import { Flex, Button, Heading, Tag } from "@chakra-ui/react";
-
 import { CgChevronRight } from "react-icons/cg";
-
 import FirstDFA from "../DFA/FirstDFA";
 import SecondDFA from "../DFA/SecondDFA";
 import CFG from "./CFG";
@@ -43,22 +41,19 @@ const RightBox = ({
           justify={["flex-end", null, "flex-end", null, null, "space-between"]}
         >
           
-          <Heading display={["none", null, "none", null, null, "flex"]}>
-            Regular Expression: <Tag as="span">{!prob2 ? regex1 : regex2}</Tag>
-          </Heading>
-          <Heading>Language Accepted:</Heading>
-              <Tag my={1} fontSize={["0.7em", "0.7em", "1em"]}>
-                {!prob2 ? "[a, b]" : "[0, 1]"}
-              </Tag>
           <Flex>
             <CFG prob2={prob2} />
             <Button
               disabled={simulating}
               onClick={handleSwitch}
               rightIcon={<CgChevronRight />}
+              bg="#151515"
+              color="gray.100"
+              _hover={{ bg: "blue.700" }}
             >
               Switch RegEx
             </Button>
+            
           </Flex>
         </Flex>
       </Flex>

@@ -260,9 +260,6 @@ const SecondDFA = ({ currentNodeVal, simulatingStatus }) => {
       rotate="0"
     />
 
-
-
-
     <Atom
       variant="1"
       variants={variants}

@@ -1,118 +1,118 @@
-export const Button = {
-  baseStyle: {
-    _focus: "",
-  },
-  sizes: {
-    regular: {
-      fontSize: ["0.7em", "0.7em", "0.9em"],
-      px: "5",
-      py: "3",
+  export const Button = {
+    baseStyle: {
+      _focus: "",
     },
-  },
-  //For the Valid check
-  variants: {
-    data: {
-      _hover: "",
-      cursor: "default",
-      py: "1",
-      px: "2",
-      ml: "3",
-      mr: "1",
-      fontWeight: "bold",
-      color: "pink.400",
-      textTransform: "uppercase",
-
-      fontSize: ["0.7em", "0.7em", "0.9em"],
-      bg: "gray.900",
+    sizes: {
+      regular: {
+        fontSize: ["0.7em", "0.7em", "0.9em"],
+        px: "5",
+        py: "3",
+      },
     },
-    clear: {
-      bg: "none",
-      _hover: "",
-      fontSize: ["0.7em", "0.7em", "0.9em"],
-      color:"gray.100",
-    },
-  },
-  defaultProps: {
-    size: "regular",
-  },
-};
-
-export const Input = {
-  baseStyle: {
-    _focus: "",
+    //For the Valid check
+    variants: {
+      data: {
+        _hover: "",
+        cursor: "default",
+        py: "1",
+        px: "2",
+        ml: "3",
+        mr: "1",
+        fontWeight: "bold",
+        color: "#151515",
     
-  },
-  sizes: {},
-  variants: {},
-  defaultProps: {},
-  
-};
 
-export const Heading = {
-  baseStyle: {
-    _focus: "",
-  },
-  sizes: {},
-  variants: {
-    regular: {
-      fontSize: ["0.8em", "0.8em", "1.2em", "1.2em"],
+        fontSize: ["0.7em", "0.7em", "0.9em"],
+        bg: "#151515",
+      },
+      clear: {
+        bg: "none",
+        _hover: "",
+        fontSize: ["0.7em", "0.7em", "0.9em"],
+        color:"gray.100",
+      },
     },
-    title: {
-      fontSize: ["2em", "2.4em", "2.9em", "2.9em", "2.9em", "2.5em"],
-      fontWeight: "bold",
+    defaultProps: {
+      size: "regular",
+    },
+  };
+
+  export const Input = {
+    baseStyle: {
+      _focus: "",
       
     },
-  },
-  defaultProps: {
-    variant: "regular",
-  },
-};
+    sizes: {},
+    variants: {},
+    defaultProps: {},
+    
+  };
 
-export const Tag = {
-  baseStyle: {
-    _focus: "",
-  },
-  sizes: {
-    regular: {
-      rounded: "md",
-      fontSize: ["0.7em", "0.7em", "0.9em"],
+  export const Heading = {
+    baseStyle: {
+      _focus: "",
     },
-  },
-  variants: {},
-  defaultProps: {},
-};
+    sizes: {},
+    variants: {
+      regular: {
+        fontSize: ["0.8em", "0.8em", "1.2em", "1.2em"],
+      },
+      title: {
+        fontSize: ["2em", "2.4em", "2.9em", "2.9em", "2.9em", "2.5em"],
+        fontWeight: "bold",
+        
+      },
+    },
+    defaultProps: {
+      variant: "regular",
+    },
+  };
 
-export const Flex = {
-  baseStyle: {},
-  sizes: {
-    heightWrap: {
-      h: ["12em", "12em", "18em", "18em", "18em", "20em"],
+  export const Tag = {
+    baseStyle: {
+      _focus: "",
     },
-  },
-  variants: {
-    heightWrap: {
-      pos: "relative",
-      borderBottom: "solid 1px",
-      borderColor: "gray.200",
+    sizes: {
+      regular: {
+        rounded: "md",
+        fontSize: ["0.7em", "0.7em", "0.9em"],
+      },
     },
-  },
-  defaultProps: {},
-};
+    variants: {},
+    defaultProps: {},
+  };
 
-export const Text = {
-  baseStyle: {},
-  sizes: {
-    label: {
-      pos: "absolute",
-      translateX: "-50%",
-      translateY: "-50%",
-      transform: "auto",
-
-      fontWeight: "semibold",
-      fontSize: ["0.6em", "0.6em", "1em", "1em", "1em", "1em"],
-      
+  export const Flex = {
+    baseStyle: {},
+    sizes: {
+      heightWrap: {
+        h: ["12em", "12em", "18em", "18em", "18em", "20em"],
+      },
     },
-  },
-  variants: {},
-  defaultProps: {},
-};
+    variants: {
+      heightWrap: {
+        pos: "relative",
+        borderBottom: "solid 1px",
+        borderColor: "gray.200",
+      },
+    },
+    defaultProps: {},
+  };
+
+  export const Text = {
+    baseStyle: {},
+    sizes: {
+      label: {
+        pos: "absolute",
+        translateX: "-50%",
+        translateY: "-50%",
+        transform: "auto",
+
+        fontWeight: "semibold",
+        fontSize: ["0.6em", "0.6em", "1em", "1em", "1em", "1em"],
+        
+      },
+    },
+    variants: {},
+    defaultProps: {},
+  };

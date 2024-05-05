@@ -30,41 +30,46 @@ export const Badge = {
     },
   },
   variants: {
+     green: {
+      bg: "green.700",
+      color: "gray.200",
+    },
+  
     q1: {
       top: "50%",
       left: "9%",
 
-      borderColor: "gray.300",
+      borderColor: "green.900",
     },
     q2: {
       top: "20%",
       left: "25%",
 
-      borderColor: "gray.300",
+      borderColor: "green.900",
     },
     q3: {
       top: "80%",
       left: "25%",
 
-      borderColor: "gray.300",
+      borderColor: "green.900",
     },
     q4: {
       top: "50%",
       left: "41%",
 
-      borderColor: "gray.300",
+      borderColor: "green.900",
     },
     q5: {
       top: "50%",
       left: "61%",
 
-      borderColor: "gray.300",
+      borderColor: "green.900",
     },
     q6: {
       top: "50%",
       left: "81%",
 
-      borderColor: "gray.300",
+      borderColor: "green.900",
     },
     q7: {
       top: "20%",
@@ -94,7 +99,7 @@ export const Badge = {
       top: "50%",
       left: "25%",
 
-      borderColor: "white.300",
+      borderColor: "red.900",
       bg: "red.900"
     },
        /*q5 */
@@ -102,52 +107,53 @@ export const Badge = {
         top: "80%",
         left: "50%",
       
-        borderColor: "orange.300",
+        borderColor: "green.900",
       },
       /* q7*/
       2: {
         top: "50%",
         left: "70%",
       
-        borderColor: "purple.300",
+        borderColor: "green.900",
       },
       /* q6*/
       3: {
         top: "50%",
         left: "50%",
       
-        borderColor: "orange.300",
+        borderColor: "green.900",
       },
       /*q3*/
       4: {
         top: "15%",
         left: "50%",
     
-        borderColor: "orange.300",
+        borderColor: "green.900",
       },
       /* q4*/
       6: {
         top: "80%",
         left: "25%",
       
-        borderColor: "purple.300",
+        borderColor: "green.900",
       },
       /* q2*/
       7: {
         top: "15%",
         left: "25%",
       
-        borderColor: "purple.300",
+        borderColor: "green.900",
       },
       /*q1 */
       8: {
         top: "50%",
         left: "10%",
       
-        borderColor: "blue.300",
+        borderColor: "green.900",
       },
   },
   defaultProps: {
     size: "node",
+    
   },
 };
