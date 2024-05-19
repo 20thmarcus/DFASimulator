@@ -195,7 +195,7 @@ const Main = () => {
   return (
     /* This will show how the ui is being presented. */
     <Flex
-      direction={["column", "column", "column", "column", "column", "row"]}
+      direction={["row"]}
       align="center"
     >
       <LeftBox

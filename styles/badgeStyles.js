@@ -7,6 +7,7 @@ export const Badge = {
       bg: "green.700",
       color: ["gray.200", null, "gray.200"],
 
+
       // h: ["2em", "2em", "3.5em", "3.5em"],
       h: "3.5em",
       w: "3.5em",
@@ -26,7 +27,7 @@ export const Badge = {
 
       textTransform: "none",
       fontSize: ["0.6em", "0.6em", "1em", "1em", "1em", "1.1em"],
-      fontWeight: "500",
+      fontWeight: "200",
     },
   },
   variants: {

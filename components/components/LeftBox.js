@@ -27,7 +27,7 @@ const LeftBox = ({
     <>
       {/*possibly for the box testing and simulate */}
       <Box
-        w={["20em", "20em", "40em", "40em", "40em", "40em"]}
+        w={["20em", "20em", "40em", "40em", "40em", "35em"]}
         mr={[0, 0, 0, 0, 0, 24]}
         mt={[14, 14, 16, 16, 16, 20]} //Changed to 20 from 0
         mb={[16, 16, 20, 20, 20, 10]} //Changed to 10 from 20
@@ -70,27 +70,7 @@ const LeftBox = ({
               <Heading>Input String:</Heading>
               <Flex align="center">
               <Flex justifyContent="flex-end"> {/* Wrap Button inside Flex */}
-                {data && (
-                  <Button
-                    variant="data"
-                    rightIcon={
-                      data.result == "Valid" ? (
-                        <Box color="green.300">
-                          string is Valid!
-                        </Box>
-                      ) : (
-                        data.result == "Invalid" && (
-                          <Box color="red.400">
-                            string is Invalid!
-                          </Box>
-                        )
-                      )
-                    }
-                    justify="flex-end"
-                  >
-                    {data.result}
-                  </Button>
-                )}
+                
                 </Flex>
               </Flex>
             
@@ -132,7 +112,7 @@ const LeftBox = ({
             </Flex>
 
             {/* DIVIDER OF LEFT CONTAINER */}
-            <Flex
+            {/* <Flex
               align="center"
               direction={["column", "column", "row", "row", "row", "none"]}
               display={["flex", "flex", "flex", "flex", "flex", "none"]}
@@ -150,7 +130,7 @@ const LeftBox = ({
               align="center"
             >
 
-            </Flex>
+            </Flex> */}
           </form>
         </Box>
       </Box>
