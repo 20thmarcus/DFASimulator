@@ -1,3 +1,5 @@
+import Image from 'next/image'; // Import Next.js Image component
+
 import {
   Box,
   VStack,
@@ -28,20 +30,20 @@ const PDA = ({ prob2 }) => {
 
       <Modal isOpen={isOpen} onClose={onClose} size="xl">
         <ModalOverlay />
-        <ModalContent bg="#151515" maxW="70%" maxH="90vh" overflowY="auto">
+        <ModalContent bg="#151515" maxW="70%" maxH="95vh" overflowY="auto">
           <ModalHeader color="gray.100">Pushdown Automata</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             {!prob2 ? (
               <VStack>
                 <Box>
-                  <img src="/views/PDA1.jpg" alt="PDA1" />
+                  <Image src="/views/PDA1.jpg" alt="PDA1" width={500} height={500} />
                 </Box>
               </VStack>
             ) : (
               <VStack>
                 <Box>
-                  <img src="/views/PDA2.jpg" alt="PDA2" />
+                  <Image src="/views/PDA2.jpg" alt="PDA2" width={500} height={500} />
                 </Box>
                 {/* Add more images as needed */}
               </VStack>
