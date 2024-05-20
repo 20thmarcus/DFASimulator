@@ -1,6 +1,6 @@
 import { Badge, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { ArrowHead, ArrowLoop, ArrowBody } from "../components/Arrows";
+import { ArrowHead, ArrowLoop, ArrowBody, ArrowLoopSm, ArrowLoopLg, } from "../components/Arrows";
 
 const Atom = motion(Badge);
 
@@ -77,6 +77,11 @@ const SecondDFA = ({ currentNodeVal, simulatingStatus }) => {
     {/* q6 q3 */}
     <Text size="label" top="33%" left="48.5%">
       0
+    </Text>
+
+    {/* q6 q6 */}
+    <Text size="label" top="50%" left="77.5%">
+      0, 1
     </Text>
 
 
@@ -174,8 +179,19 @@ const SecondDFA = ({ currentNodeVal, simulatingStatus }) => {
     />      
 
 
+    {/*q7 q7 */}
+    <ArrowLoopSm
+        top={["50%", "50%", "50%", null, null, "50%"]}
+        left={["77.5%", "77.5%", "75.5%", null, null, "40%"]}
+        rotate="180"
+      />
 
-
+    {/*q7 q7 */}
+    <ArrowLoopLg
+        top={["20%", "20%", "20%", null, null, "50%"]}
+        left={["67.3%", "67.3%", "65.6%", null, null, "74.3%"]}
+        rotate="200"
+      />
 
 
     {/* q1 q2 */}

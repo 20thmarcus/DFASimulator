@@ -48,7 +48,7 @@ const CFG = ({ prob2 }) => {
                 <Text>{"Y -> 1Y | 0Y | 11Y | ^"}</Text>
                 <Text>{"A -> 101 | X | 100 | Y"}</Text>
                 <Text>{"B -> DB | 01B | ^"}</Text>
-                <Text>{"C -> 111| 000 | 101"}</Text>
+                <Text>{"C -> 111 | 000 | 101"}</Text>
                 <Text>{"D -> 1D | 0D | ^"}</Text>
               </VStack>
             )}

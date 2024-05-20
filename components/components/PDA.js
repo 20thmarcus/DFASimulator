@@ -30,7 +30,7 @@ const PDA = ({ prob2 }) => {
 
       <Modal isOpen={isOpen} onClose={onClose} size="xl">
         <ModalOverlay />
-        <ModalContent bg="#151515" maxW="70%" maxH="95vh" overflowY="auto">
+        <ModalContent bg="#151515" maxW="50%" maxH="70vh" overflowY="auto">
           <ModalHeader color="gray.100">Pushdown Automata</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
