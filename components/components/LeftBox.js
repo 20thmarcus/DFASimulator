@@ -42,7 +42,7 @@ const LeftBox = ({
         height="100%"
       >
         <Flex align="flex-end" justify="space-between">
-          <Heading variant="title" fontFamily="Verdana">Group 5</Heading>
+          <Heading variant="title" fontFamily="Verdana">DFA Compiler</Heading>
           <Code fontSize={["0.5em", null, "0.6em", null, null, "0.6em"]} style={{ fontFamily: 'Verdana, Geneva, sans-serif' }}>
             {/* Your code content here */}
           </Code>
