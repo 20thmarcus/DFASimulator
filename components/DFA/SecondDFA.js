@@ -1,3 +1,4 @@
+
 import { Badge, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { ArrowHead, ArrowLoop, ArrowBody, ArrowLoopSm, ArrowLoopLg, } from "../components/Arrows";
@@ -19,10 +20,14 @@ const variants = {
 const SecondDFA = ({ currentNodeVal, simulatingStatus }) => {
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
+    <Text top="1%" left="80%" size="label">
+        DFA For RegEx 2
+      </Text>
     {/* q1 q4 */}
     <Text size="label" top="70%" left="15%">
       1
     </Text>
+
 
     {/* q1 q2 */}
     <Text size="label" top="30%" left="15%">

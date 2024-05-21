@@ -1,3 +1,5 @@
+
+
 import { Badge, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import {
@@ -28,6 +30,9 @@ const FirstDFA = ({ currentNode, simulating }) => {
       {/* q1 q2 */}
       <Text top="31%" left="14%" size="label">
         a
+      </Text>
+      <Text top="1%" left="80%" size="label">
+        DFA For RegEx 1
       </Text>
       {/* q2 t */}
       <Text top="35%" left="27%" size="label">

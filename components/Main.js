@@ -12,7 +12,7 @@ const Main = () => {
   const [string, setString] = useState("");
   const [data, setData] = useState("");
   const [count, setCount] = useState(0);
-  const [history, setHistory] = useState([]); // Add this state
+  const [history, setHistory] = useState([]);
   const [prob2, setProb2] = useState(false);
   const [currentNode, setCurrentNode] = useState(0);
   const [simulating, setSimulating] = useState(false);
@@ -82,25 +82,33 @@ const Main = () => {
     });
   };
 
-  const handleValid = () => {
+  const updateHistoryResult = (input, result) => {
+    setHistory((prevHistory) =>
+      prevHistory.map((entry) =>
+        entry.input === input ? { ...entry, result } : entry
+      )
+    );
+  };
+
+  const handleValid = (input) => {
     setSimulating(false);
     validToast();
     setData(results);
-    setHistory((prev) => [...prev, { input: string, result: "Valid" }]); // Update history
+    updateHistoryResult(input, "Valid");
   };
 
-  const handleTrapped = () => {
+  const handleTrapped = (input) => {
     setSimulating(false);
     trapToast();
     setData(results);
-    setHistory((prev) => [...prev, { input: string, result: "Invalid: Trapped" }]); // Update history
+    updateHistoryResult(input, "Invalid: Trapped");
   };
 
-  const handleShort = () => {
+  const handleShort = (input) => {
     setSimulating(false);
     shortToast();
     setData(results);
-    setHistory((prev) => [...prev, { input: string, result: "Invalid: Too Short" }]); // Update history
+    updateHistoryResult(input, "Invalid: Too Short");
   };
 
   const handleInputString = () => {
@@ -117,7 +125,7 @@ const Main = () => {
       } else if (input.includes("a") || input.includes("b")) {
         results = new DFA(input, problem1, language1);
         setData(results);
-        setHistory((prev) => [...prev, { input: string, result: "Tested" }]); // Update history
+        setHistory((prev) => [...prev, { input: string, result: "Tested" }]);
       } else {
         notInLanguageToast();
       }
@@ -127,7 +135,7 @@ const Main = () => {
       } else if (input.includes("0") || input.includes("1")) {
         results = new DFA(input, problem2, language2);
         setData(results);
-        setHistory((prev) => [...prev, { input: string, result: "Tested" }]); // Update history
+        setHistory((prev) => [...prev, { input: string, result: "Tested" }]);
       } else {
         notInLanguageToast();
       }
@@ -151,12 +159,12 @@ const Main = () => {
             node === pathWithZeroes[pathWithZeroes.length - 2] &&
             !pathWithZeroes.includes("T") &&
             !pathWithZeroes.includes("eos")
-              ? handleValid()
+              ? handleValid(input)
               : node === "T" && pathWithZeroes.slice(-4)[0] === "T"
-              ? handleTrapped()
+              ? handleTrapped(input)
               : pathWithZeroes.slice(-4)[3 - 1] === node &&
                 !pathWithZeroes.includes("T") &&
-                handleShort();
+                handleShort(input);
           }, i * 200);
         });
       } else {
@@ -174,8 +182,8 @@ const Main = () => {
             setCurrentNode(node);
             node === pathWithZeroes[pathWithZeroes.length - 2] &&
             !pathWithZeroes.includes("eos")
-              ? handleValid()
-              : pathWithZeroes.slice(-4)[3 - 1] === node && handleShort();
+              ? handleValid(input)
+              : pathWithZeroes.slice(-4)[3 - 1] === node && handleShort(input);
           }, i * 200);
         });
       } else {
@@ -188,9 +196,75 @@ const Main = () => {
     setHistory([]);
   };
 
+  const handleRunAll = async () => {
+    for (const entry of history) {
+      const { input } = entry;
+      setString(input);
+      handleInputString();
+
+      if (!prob2) {
+        if (input === "") {
+          notInLanguageToast();
+        } else if (input.includes("a") || input.includes("b")) {
+          setSimulating(true);
+          results = new DFA(input, problem1, language1);
+          const pathWithZeroes = [0].concat(...results.path.map((e) => [e, 0]));
+          await new Promise((resolve) => {
+            pathWithZeroes.some((node, i) => {
+              setTimeout(() => {
+                setCurrentNode(node);
+                if (node === pathWithZeroes[pathWithZeroes.length - 2] &&
+                  !pathWithZeroes.includes("T") &&
+                  !pathWithZeroes.includes("eos")) {
+                  handleValid(input);
+                } else if (node === "T" && pathWithZeroes.slice(-4)[0] === "T") {
+                  handleTrapped(input);
+                } else if (pathWithZeroes.slice(-4)[3 - 1] === node &&
+                  !pathWithZeroes.includes("T")) {
+                  handleShort(input);
+                }
+                if (i === pathWithZeroes.length - 1) resolve();
+              }, i * 200);
+            });
+          });
+        } else {
+          notInLanguageToast();
+        }
+      } else {
+        if (input === "") {
+          notInLanguageToast();
+        } else if (input.includes("0") || input.includes("1")) {
+          setSimulating(true);
+          results = new DFA(input, problem2, language2);
+          const pathWithZeroes = [0].concat(...results.path.map((e) => [e, 0]));
+          await new Promise((resolve) => {
+            pathWithZeroes.some((node, i) => {
+              setTimeout(() => {
+                setCurrentNode(node);
+                if (node === pathWithZeroes[pathWithZeroes.length - 2] &&
+                  !pathWithZeroes.includes("eos")) {
+                  handleValid(input);
+                } else if (pathWithZeroes.slice(-4)[3 - 1] === node) {
+                  handleShort(input);
+                }
+                if (i === pathWithZeroes.length - 1) resolve();
+              }, i * 200);
+            });
+          });
+        } else {
+          notInLanguageToast();
+        }
+      }
+    }
+  };
+
+  const handleStoreInput = () => {
+    setHistory((prev) => [...prev, { input: string, result: "Stored" }]);
+  };
+
   return (
     <Flex
-      direction={["column","column","column","column","column", "row"]}
+      direction={["column", "column", "column", "column", "column", "row"]}
       align="center"
     >
       <LeftBox
@@ -205,8 +279,10 @@ const Main = () => {
         count={count}
         regex1={regex1}
         regex2={regex2}
-        history={history} // Pass history to LeftBox
-        handleClearHistory={handleClearHistory} // Pass clear history function to LeftBox
+        history={history}
+        handleClearHistory={handleClearHistory}
+        handleRunAll={handleRunAll}
+        handleStoreInput={handleStoreInput} // Pass store input function to LeftBox
       />
       <Divider
         display={["block", null, "block", null, null, "none"]}
