@@ -203,9 +203,9 @@ const SecondDFA = ({ currentNodeVal, simulatingStatus }) => {
 
     {/* q1 q4 */}
     <ArrowHead
-      top={["72%", null, "74.5%", null, null, "75.3%"]}
-      left={["21.3%", null, "21%", null, null, "21.8%"]}
-      rotate={["42", null, "42", null, null, "42%"]}
+      top={["72%", null, "74.5%", null, null, "71.3%"]}
+      left={["21.3%", null, "21%", null, null, "20.8%"]}
+      rotate={["42", null, "42", null, null, "45%"]}
     />
 
     {/* q2 q3 */}

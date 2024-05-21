@@ -12,7 +12,7 @@ const Main = () => {
   const [string, setString] = useState("");
   const [data, setData] = useState("");
   const [count, setCount] = useState(0);
-
+  const [history, setHistory] = useState([]); // Add this state
   const [prob2, setProb2] = useState(false);
   const [currentNode, setCurrentNode] = useState(0);
   const [simulating, setSimulating] = useState(false);
@@ -32,12 +32,14 @@ const Main = () => {
     const countValue = e.target.value.length;
     setCount(countValue);
   };
+
   const handleReset = () => {
     setString("");
     setCount(0);
     setData("");
     closeAll();
   };
+
   const handleSwitch = () => {
     setProb2((prev) => !prev);
     setData("");
@@ -47,6 +49,7 @@ const Main = () => {
   const closeAll = () => {
     closeToasts.closeAll();
   };
+
   const validToast = () => {
     validString({
       title: "Valid String!",
@@ -54,6 +57,7 @@ const Main = () => {
       isClosable: true,
     });
   };
+
   const trapToast = () => {
     trapString({
       title: "Invalid: Trapped",
@@ -61,6 +65,7 @@ const Main = () => {
       isClosable: true,
     });
   };
+
   const shortToast = () => {
     shortString({
       title: "Invalid: Too Short",
@@ -68,6 +73,7 @@ const Main = () => {
       isClosable: true,
     });
   };
+
   const notInLanguageToast = () => {
     notInLanguageString({
       title: "Empty/Invalid Input",
@@ -77,22 +83,24 @@ const Main = () => {
   };
 
   const handleValid = () => {
-    // console.log("DONE OK");
     setSimulating(false);
     validToast();
     setData(results);
+    setHistory((prev) => [...prev, { input: string, result: "Valid" }]); // Update history
   };
+
   const handleTrapped = () => {
-    // console.log("DONE TRAPPED");
     setSimulating(false);
     trapToast();
     setData(results);
+    setHistory((prev) => [...prev, { input: string, result: "Invalid: Trapped" }]); // Update history
   };
+
   const handleShort = () => {
-    // console.log("DONE SHORT");
     setSimulating(false);
     shortToast();
     setData(results);
+    setHistory((prev) => [...prev, { input: string, result: "Invalid: Too Short" }]); // Update history
   };
 
   const handleInputString = () => {
@@ -104,30 +112,24 @@ const Main = () => {
     handleInputString();
 
     if (!prob2) {
-      if (input == "") {
+      if (input === "") {
         notInLanguageToast();
-        // console.log("No valid configuration for input string/empty");
       } else if (input.includes("a") || input.includes("b")) {
-        // console.log("PROB1");
         results = new DFA(input, problem1, language1);
-        // console.log(results);
         setData(results);
+        setHistory((prev) => [...prev, { input: string, result: "Tested" }]); // Update history
       } else {
         notInLanguageToast();
-        // console.log("No valid configuration for input string!!");
       }
     } else {
-      if (input == "") {
+      if (input === "") {
         notInLanguageToast();
-        // console.log("No valid configuration for input string/empty");
       } else if (input.includes("0") || input.includes("1")) {
-        // console.log("PROB2");
         results = new DFA(input, problem2, language2);
-        // console.log(results);
         setData(results);
+        setHistory((prev) => [...prev, { input: string, result: "Tested" }]); // Update history
       } else {
         notInLanguageToast();
-        // console.log("No valid configuration for input string!!");
       }
     }
   };
@@ -137,63 +139,56 @@ const Main = () => {
     handleInputString();
 
     if (!prob2) {
-      if (input == "") {
+      if (input === "") {
         notInLanguageToast();
-        // console.log("No valid configuration for input string/empty");
       } else if (input.includes("a") || input.includes("b")) {
         setSimulating(true);
-        // console.log("PROB1");
         results = new DFA(input, problem1, language1);
-        // console.log(results);
         const pathWithZeroes = [0].concat(...results.path.map((e) => [e, 0]));
-        // console.log(pathWithZeroes);
         pathWithZeroes.some((node, i) => {
           setTimeout(() => {
             setCurrentNode(node);
-            node == pathWithZeroes[pathWithZeroes.length - 2] &&
+            node === pathWithZeroes[pathWithZeroes.length - 2] &&
             !pathWithZeroes.includes("T") &&
             !pathWithZeroes.includes("eos")
               ? handleValid()
-              : node == "T" && pathWithZeroes.slice(-4)[0] == "T"
+              : node === "T" && pathWithZeroes.slice(-4)[0] === "T"
               ? handleTrapped()
-              : pathWithZeroes.slice(-4)[3 - 1] == node &&
+              : pathWithZeroes.slice(-4)[3 - 1] === node &&
                 !pathWithZeroes.includes("T") &&
                 handleShort();
           }, i * 200);
         });
       } else {
         notInLanguageToast();
-        // console.log("No valid configuration for input string!!");
       }
     } else {
-      if (input == "") {
+      if (input === "") {
         notInLanguageToast();
-        // console.log("No valid configuration for input string/empty");
       } else if (input.includes("0") || input.includes("1")) {
         setSimulating(true);
-        // console.log("PROB2");
         results = new DFA(input, problem2, language2);
-        // console.log(results);
         const pathWithZeroes = [0].concat(...results.path.map((e) => [e, 0]));
-        // console.log(pathWithZeroes);
         pathWithZeroes.some((node, i) => {
           setTimeout(() => {
             setCurrentNode(node);
-            node == pathWithZeroes[pathWithZeroes.length - 2] &&
+            node === pathWithZeroes[pathWithZeroes.length - 2] &&
             !pathWithZeroes.includes("eos")
               ? handleValid()
-              : pathWithZeroes.slice(-4)[3 - 1] == node && handleShort();
+              : pathWithZeroes.slice(-4)[3 - 1] === node && handleShort();
           }, i * 200);
         });
       } else {
         notInLanguageToast();
-        // console.log("No valid configuration for input string!!");
       }
     }
   };
 
+  const handleClearHistory = () => {
+    setHistory([]);
+  };
+
   return (
-    /* This will show how the ui is being presented. */
     <Flex
       direction={["column","column","column","column","column", "row"]}
       align="center"
@@ -210,6 +205,8 @@ const Main = () => {
         count={count}
         regex1={regex1}
         regex2={regex2}
+        history={history} // Pass history to LeftBox
+        handleClearHistory={handleClearHistory} // Pass clear history function to LeftBox
       />
       <Divider
         display={["block", null, "block", null, null, "none"]}

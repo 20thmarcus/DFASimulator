@@ -31,11 +31,11 @@ const FirstDFA = ({ currentNode, simulating }) => {
       </Text>
       {/* q2 t */}
       <Text top="35%" left="27%" size="label">
-        a
+        b
       </Text>
       {/* q3 t */}
       <Text top="65%" left="27%" size="label">
-        b
+        a
       </Text>
       {/* q3 q4 */}
       <Text top="69%" left="36%" size="label">
